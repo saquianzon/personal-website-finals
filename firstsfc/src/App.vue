@@ -10,8 +10,8 @@
 
 <style>
 
-@import './css/styles.css';
-@import './css/image.css';
-@import './css/modal.css';
+@import './public/css/styles.css';
+@import './public/css/image.css';
+@import './public/css/modal.css';
 
 </style>
