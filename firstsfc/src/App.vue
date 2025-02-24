@@ -3,6 +3,7 @@
 <template>
   <navbar/>
   <home/>
+  <about/>
   <comment-form/>
   <comment/>
 </template>
