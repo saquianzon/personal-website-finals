@@ -1,0 +1,176 @@
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif
+  }
+  
+  .w3-row-padding img {
+    margin-bottom: 12px
+  }
+  
+  .w3-sidebar {
+    width: 120px; background: #130302;
+  }
+  
+  #main {
+    margin-left: 120px
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #main {margin-left: 0}
+  }
+  
+  body {
+  background-image: url("https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Media.png?raw=true");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+  
+  .w3-sidebar .w3-button:hover {
+    background-color: #daa749 !important;
+  }
+  
+  .w3-bar .w3-button:hover {
+    background-color: #daa749 !important;
+  }
+  
+  .center-line {
+    margin: 0 auto;
+  }
+  
+  #img1 {
+    clip-path: circle(50%);
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fills the circle without stretching */
+    display: block; /* Prevents inline spacing issues */
+    margin: 0 auto; /* Centers the image horizontally */
+  }
+  
+  header h1 {
+    font-size: 40px;
+  }
+  
+  .w3-hover-opacity:hover {
+    opacity: 1 !important; /* Ensures no opacity change */
+  }
+  
+  
+  .flex-container {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Adjusts spacing between boxes */
+    align-items: flex-start; /* Aligns items to the top */
+    flex-wrap: wrap; /* Wraps items to the next line if needed */
+    gap: 20px; /* Adds spacing between boxes */
+  }
+  
+  .flex-box {
+    flex: 1 1 calc(33.333% - 20px); /* Ensures equal width for three boxes and accounts for gaps */
+    box-sizing: border-box; /* Ensures padding doesn't affect box width */
+    min-width: 250px; /* Prevents boxes from shrinking too much */
+  }
+  
+  .center-box {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Spacing from the top */
+  }
+  
+  .center-box ul {
+    width: 100%; /* Adjust the width for responsiveness */
+    max-width: 400px; /* Set a max width for the box */
+  }
+  
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+  .custom-color {
+    background-color: #304670;
+  }
+  
+  .custom-color2 {
+    background-color: #857036;
+  }
+  
+  .custom-color3 {
+    background-color: #36856b;
+  }
+  
+  .custom-color4 {
+    background-color: #303470;
+  }
+  
+  .custom-color5 {
+    background-color: #7f3c81;
+  }
+  
+  .custom-color6 {
+    background-color: #85364e;
+  }
+  
+  .custom-color7 {
+    background-color: #437230;
+  }
+  
+  a.five:link {color:#ffffff;text-decoration:none;}
+  a.five:visited {color:#8dfdd8;text-decoration:none;}
+  a.five:hover {text-decoration:underline;}
+  
+  
+  .gallery-container {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Reduces space between images */
+    flex-wrap: wrap; /* Ensures images wrap to the next row if needed */
+  }
+  
+  div.gallery img {
+    width: 320px; /* Fixed width */
+    height: 280px; /* Fixed height */
+    object-fit: cover; /* Crops and maintains proportions */
+    display: block;
+    margin: auto;
+    border-radius: 5px; /* Optional: Adds rounded corners */
+  }
+  
+  div.gallery {
+    flex: 0 1 auto; /* Keeps dimensions flexible */
+    text-align: center; /* Centers text under each image */
+    margin-bottom: 10px; /* Reduces spacing below the text */
+  }
+  
+   
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .preaching-jw {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Reduces space between images */
+    flex-wrap: wrap; /* Ensures images wrap to the next row if needed */
+    margin-top: 20px; /* Adjusts space above the gallery */
+    margin-bottom: 15px;
+  }
+  
+  div.preaching {
+    flex: 0 1 auto; /* Keeps dimensions flexible */
+    text-align: center; /* Centers text under each image */
+    margin-bottom: 10px; /* Reduces spacing below the text */
+  }
+  
+  div.preaching img {
+    width: 600px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Crops and maintains proportions */
+    display: block;
+    margin: auto;
+    border-radius: 5px; /* Optional: Adds rounded corners */
+  }
+  
+  .w3-text-light-grey {
+    font-weight: bold;
+  }
