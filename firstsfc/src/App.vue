@@ -4,6 +4,8 @@
   <navbar/>
   <home/>
   <about/>
+  <it/>
+  <goals/>
   <comment-form/>
   <comment/>
 </template>
