@@ -12,6 +12,8 @@ import TheWelcome from './components/TheWelcome.vue'
 
 <template>
   <h1>sup</h1>
+  <comment-form/>
+  <comment/>
 </template>
 
 <style></style>
