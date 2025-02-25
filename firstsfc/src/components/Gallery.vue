@@ -11,7 +11,6 @@
         <h2 class="w3-padding-16 w3-center w3-text-light-grey">Hobbies and Interests</h2>
       </div>
       <hr style="width:200px" class="center-line">
-      <p class="w3-center w3-large">Try clicking on the images!</p>
       <br>
       <div id="hobbies-gallery" class="gallery-container"></div>
     </section>
@@ -20,15 +19,14 @@
         <h2 class="w3-padding-16 w3-center w3-text-light-grey">Art Gallery</h2>
       </div>
       <hr style="width:200px" class="center-line">
-      <p class="w3-center w3-large">Try clicking on the images!</p>
-      <p class="w3-center w3-medium">Please don't steal/repost my works .ᐟ(つ╥﹏╥)つ</p>
+      <p class="w3-center w3-large">Please don't steal/repost my works .ᐟ(つ╥﹏╥)つ</p>
       <div id="art-gallery" class="gallery-container"></div>
     </section>
     <Modal ref="imageModal" />  </div>
 </template>
 
 <script>
-import Modal from './Modal.vue'; // Make sure the path is correct!
+import Modal from '@/components/Modal.vue'; // Make sure the path is correct!
 export default {
   name: 'Gallery',
   components: {
@@ -92,75 +90,75 @@ export default {
       ],
       artGallery: [ // Moved artGallery data into component data
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Stray.png?raw=true",
+          src: "/images/Stray.png",
           alt: "Cat and B12",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Stray.png?raw=true",
+          link: "/images/Stray.png",
           description: "Stray Fanart",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Quiet%20Place%20fanart%20.png?raw=true",
+          src: "/images/A Quiet Place fanart .png",
           alt: "A Quiet Place Fanart",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Quiet%20Place%20fanart%20.png?raw=true",
+          link: "/images/A Quiet Place fanart .png",
           description: "A Quiet Place Fanart",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/BB-8%20and%20D-0%20-%20Art%20Activity.png?raw=true",
+          src: "/images/BB-8 and D-0 - Art Activity.png",
           alt: "BB8 & D-0",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/BB-8%20and%20D-0%20-%20Art%20Activity.png?raw=true",
+          link: "/images/BB-8 and D-0 - Art Activity.png",
           description: "BB8 & D-0",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/The%20Eagle%20and%20the%20Turtle.png?raw=true",
+          src: "/images/The Eagle and the Turtle.png",
           alt: "The Eagle and Turtle",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/The%20Eagle%20and%20the%20Turtle.png?raw=true",
+          link: "/images/The Eagle and the Turtle.png",
           description: "The Eagle and Turtle",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/JWD%20Blue%20&%20Beta.png?raw=true",
+          src: "/images/JWD Blue & Beta.png",
           alt: "Blue & Beta from Jurassic World",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/JWD%20Blue%20&%20Beta.png?raw=true",
+          link: "/images/JWD Blue & Beta.png",
           description: "Blue & Beta from Jurassic World",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/anniversary%20gift.png?raw=true",
+          src: "/images/anniversary gift.png",
           alt: "19th Anniversary Gift for Parents",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/anniversary%20gift.png?raw=true",
+          link: "/images/anniversary gift.png",
           description: "19th Anniversary Gift for Parents",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Pure%20Vessel.png?raw=true",
+          src: "/images/Pure Vessel.png",
           alt: "Hollow Knight Pure Vessel Fanart",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Pure%20Vessel.png?raw=true",
+          link: "/images/Pure Vessel.png",
           description: "Hollow Knight Pure Vessel Fanart",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/HK%20OC%20-%20Vale.png?raw=true",
+          src: "/images/HK OC - Vale.png",
           alt: "Hollow Knight Vale OC",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/HK%20OC%20-%20Vale.png?raw=true",
+          link: "/images/HK OC - Vale.png",
           description: "Hollow Knight Vale OC",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Little%20Ghost.png?raw=true",
+          src: "/images/Little Ghost.png",
           alt: "Hollow Knight The Knight Fanart",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Little%20Ghost.png?raw=true",
+          link: "/images/Little Ghost.png",
           description: "Hollow Knight The Knight Fanart",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Hornet.jpg?raw=true",
+          src: "/images/Hornet.jpg",
           alt: "Hollow Knight Hornet Fanart",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Hornet.jpg?raw=true",
+          link: "/images/Hornet.jpg",
           description: "Hollow Knight Hornet Fanart",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Silver%20.png?raw=true",
+          src: "/images/Silver .png",
           alt: "Cat Sona OC",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Silver%20.png?raw=true",
+          link: "/images/Silver .png",
           description: "Cat Sona OC",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Light%20of%20Hope%20and%20Peace%20-%20Art%20Appreciation%20Final%20Project.png?raw=true",
+          src: "/images/A Light of Hope and Peace - Art Appreciation Final Project.png",
           alt: "ARTAPPRE Final Project",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Light%20of%20Hope%20and%20Peace%20-%20Art%20Appreciation%20Final%20Project.png?raw=true",
+          link: "/images/A Light of Hope and Peace - Art Appreciation Final Project.png",
           description: "ARTAPPRE Final Project",
         },
       ],
