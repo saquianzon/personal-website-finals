@@ -188,19 +188,17 @@ export default {
     };
   },
   mounted() {
-    this.renderGallery("hobbies-gallery", this.hobbiesGallery); // Pass gallery data to renderGallery
-    this.renderGallery("art-gallery", this.artGallery);     // Pass gallery data to renderGallery
-    this.renderGallery("personal-goals-gallery", this.personalGoalsGallery); // Pass gallery data to renderGallery
+    this.renderGallery("hobbies-gallery", this.hobbiesGallery);
+    this.renderGallery("art-gallery", this.artGallery);
+    this.renderGallery("personal-goals-gallery", this.personalGoalsGallery);
   },
   methods: {
-    renderGallery(containerId, galleryItems) { // Modified to be a Vue method and accept galleryItems
+    renderGallery(containerId, galleryItems) {
       const container = document.getElementById(containerId);
-
       if (!container) return console.error(`Container with ID ${containerId} not found.`);
+      container.innerHTML = "";
 
-      container.innerHTML = ""; // Clear existing content
-
-      const renderedItems = []; // Array to store rendered item data
+      const renderedItems = [];
 
       galleryItems.forEach((item) => {
         const galleryDiv = document.createElement("div");
@@ -213,7 +211,7 @@ export default {
         img.style.height = "280px";
         img.dataset.link = item.link;
         img.dataset.description = item.description;
-        img.style.cursor = "pointer"; // Add CSS style for hover pointer
+        img.style.cursor = "pointer";
 
         const desc = document.createElement("div");
         desc.className = "desc";
@@ -223,22 +221,24 @@ export default {
         galleryDiv.appendChild(desc);
         container.appendChild(galleryDiv);
 
-        renderedItems.push({  // Store image info and element
+        renderedItems.push({
           element: img,
-          info: { link: item.link, src: item.src, description: item.description }
+          info: { link: item.link, src: item.src, description: item.description },
         });
       });
 
-      renderedItems.forEach(item => { // Attach click listeners using Vue methods!
-        item.element.addEventListener('click', function() { // Changed to standard function
-          this.openModal(item.info); // Call the Vue component's openModal method!
-        }.bind(this)); // <--- .bind(this) is added here
+      renderedItems.forEach(item => {
+        item.element.addEventListener('click', function() {
+          console.log("Image clicked!");
+          this.openModal(item.info);
+        }.bind(this));
       });
     },
-    openModal(imageInfo) {
+    openModal(imageInfo) { // CORRECTED openModal FUNCTION
+      console.log("openModal function called!");
       this.isModalVisible = true;
-      this.modalImageSrc = imageInfo.link || imageInfo.src;
-      this.modalImageCaption = imageInfo.description || "";
+      this.modalImageSrc = imageInfo.link || imageInfo.src; // Access directly: imageInfo.link
+      this.modalImageCaption = imageInfo.description || ""; // Access directly: imageInfo.description
     },
     closeTheModal() {
       this.isModalVisible = false;
