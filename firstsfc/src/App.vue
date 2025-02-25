@@ -7,6 +7,7 @@
   <it/>
   <goals/>
   <gallery/>
+  <contact/>
   <comment-form/>
   <comment/>
 </template>
