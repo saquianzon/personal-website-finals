@@ -8,6 +8,7 @@ import About from './components/About.vue';
 import IT from './components/IT.vue';
 import Goals from './components/Goals.vue';
 import Gallery from './components/Gallery.vue';
+import Modal from './components/Modal.vue';
 
 
 const app = createApp(App)
@@ -19,4 +20,5 @@ app.component('about', About)
 app.component('it', IT)
 app.component('goals', Goals)
 app.component('gallery', Gallery)
+app.component('modal', Modal)
 app.mount('#app')

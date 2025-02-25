@@ -43,8 +43,12 @@
 </template>
 
 <script>
+import Modal from './Modal.vue'; // Make sure the path is correct!
 export default {
   name: 'Gallery',
+  components: {
+    Modal,
+  },
   data() {
     return {
       isModalVisible: false,
