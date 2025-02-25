@@ -1,0 +1,266 @@
+<template>
+    <div class="w3-padding-large" id="main">
+        <div id="main-content">
+            <div class="w3-content w3-center w3-text-white" id="goals">
+            </div>
+            
+            <!-- Personal Goals Section -->
+            <section>
+                <h3 class="w3-padding-16 w3-center w3-text-light-grey">Personal Goals</h3>
+                <div id="personal-goals-gallery" class="gallery-container"></div>
+            </section>
+
+            <section>
+                <div class="w3-content w3-center w3-text-white" id="photos">
+                    <h2 class="w3-padding-16 w3-center w3-text-light-grey">Hobbies and Interests</h2>
+                </div>
+                <hr style="width:200px" class="center-line">
+                <p class="w3-center w3-large">Try clicking on the images!</p>
+                <br>
+                <div id="hobbies-gallery" class="gallery-container"></div>
+            </section>
+            
+            <!-- Gallery Vue (changed to pass HTML validator as vue is not recognized)-->
+            <!-- Art Gallery Section -->
+            <section>
+                <div class="w3-content w3-center w3-text-white" id="art">
+                    <h2 class="w3-padding-16 w3-center w3-text-light-grey">Art Gallery</h2>
+                </div>
+                <hr style="width:200px" class="center-line">
+                <p class="w3-center w3-large">Try clicking on the images!</p>
+                <p class="w3-center w3-medium">Please don't steal/repost my works .ᐟ(つ╥﹏╥)つ</p>
+                <div id="art-gallery" class="gallery-container"></div>
+            </section>
+        </div>
+        
+        <!-- Modal Vue for Full-Size Images (changed to pass HTML validator as vue is not recognized) -->
+        <div id="image-modal" class="modal" role="dialog" aria-labelledby="image-caption" aria-hidden="true">
+            <button id="close-modal" class="close" aria-label="Close">&times;</button>
+            <img class="modal-content" id="modal-image" src="https://via.placeholder.com/300" alt="Full-size view of selected image">
+            <div id="image-caption" role="note"></div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'Gallery',
+  data() {
+    return {
+      isModalVisible: false,
+      modalImageSrc: '',
+      modalImageCaption: '',
+      hobbiesGallery: [ // Moved hobbiesGallery data into component data
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/digital%20drawing.png?raw=true",
+          alt: "Digital Drawing",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/digital%20drawing.png?raw=true",
+          description: "Digital Drawing",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/gahoole.jpg?raw=true",
+          alt: "Reading Novels",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/gahoole.jpg?raw=true",
+          description: "Reading Novels",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/doors%20figure.png?raw=true",
+          alt: "Video Games",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/doors%20figure.png?raw=true",
+          description: "Video Games",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/cat.png?raw=true",
+          alt: "Cats",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/cat.png?raw=true",
+          description: "Cats",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/dinosaurs.png?raw=true",
+          alt: "Dinosaurs",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/dinosaurs.png?raw=true",
+          description: "Dinosaurs",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/nature.png?raw=true",
+          alt: "Nature",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/nature.png?raw=true",
+          description: "Nature",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/godzilla.jpg?raw=true",
+          alt: "Watching Movies/Shows",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/godzilla.jpg?raw=true",
+          description: "Watching Sci-Fi Movies/Shows",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/ukulele.png?raw=true",
+          alt: "Playing/Listening to Music",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/ukulele.png?raw=true",
+          description: "Playing/Listening to Music",
+        },
+        // Add your hobbies gallery items here
+      ],
+      artGallery: [ // Moved artGallery data into component data
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Stray.png?raw=true",
+          alt: "Cat and B12",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Stray.png?raw=true",
+          description: "Stray Fanart",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Quiet%20Place%20fanart%20.png?raw=true",
+          alt: "A Quiet Place Fanart",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Quiet%20Place%20fanart%20.png?raw=true",
+          description: "A Quiet Place Fanart",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/BB-8%20and%20D-0%20-%20Art%20Activity.png?raw=true",
+          alt: "BB8 & D-0",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/BB-8%20and%20D-0%20-%20Art%20Activity.png?raw=true",
+          description: "BB8 & D-0",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/The%20Eagle%20and%20the%20Turtle.png?raw=true",
+          alt: "The Eagle and Turtle",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/The%20Eagle%20and%20the%20Turtle.png?raw=true",
+          description: "The Eagle and Turtle",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/JWD%20Blue%20&%20Beta.png?raw=true",
+          alt: "Blue & Beta from Jurassic World",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/JWD%20Blue%20&%20Beta.png?raw=true",
+          description: "Blue & Beta from Jurassic World",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/anniversary%20gift.png?raw=true",
+          alt: "19th Anniversary Gift for Parents",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/anniversary%20gift.png?raw=true",
+          description: "19th Anniversary Gift for Parents",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Pure%20Vessel.png?raw=true",
+          alt: "Hollow Knight Pure Vessel Fanart",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Pure%20Vessel.png?raw=true",
+          description: "Hollow Knight Pure Vessel Fanart",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/HK%20OC%20-%20Vale.png?raw=true",
+          alt: "Hollow Knight Vale OC",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/HK%20OC%20-%20Vale.png?raw=true",
+          description: "Hollow Knight Vale OC",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Little%20Ghost.png?raw=true",
+          alt: "Hollow Knight The Knight Fanart",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Little%20Ghost.png?raw=true",
+          description: "Hollow Knight The Knight Fanart",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Hornet.jpg?raw=true",
+          alt: "Hollow Knight Hornet Fanart",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Hornet.jpg?raw=true",
+          description: "Hollow Knight Hornet Fanart",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Silver%20.png?raw=true",
+          alt: "Cat Sona OC",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/Silver%20.png?raw=true",
+          description: "Cat Sona OC",
+        },
+        {
+          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Light%20of%20Hope%20and%20Peace%20-%20Art%20Appreciation%20Final%20Project.png?raw=true",
+          alt: "ARTAPPRE Final Project",
+          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/artworks/A%20Light%20of%20Hope%20and%20Peace%20-%20Art%20Appreciation%20Final%20Project.png?raw=true",
+          description: "ARTAPPRE Final Project",
+        },
+      ],
+      personalGoalsGallery: [ // Moved personalGoalsGallery data into component data
+        {
+          src: "https://i.pinimg.com/564x/59/59/9c/59599c11c023caa2612a987c96e3a326.jpg",
+          alt: "Cat and Piano",
+          link: "https://i.pinimg.com/564x/59/59/9c/59599c11c023caa2612a987c96e3a326.jpg",
+          description: "Learn to Play Piano",
+        },
+        {
+          src: "https://soranews24.com/wp-content/uploads/sites/3/2019/10/gs-2.png",
+          alt: "Travel to Japan",
+          link: "https://soranews24.com/wp-content/uploads/sites/3/2019/10/gs-2.png",
+          description:
+            "Travel to Japan for their Cherry Blossoms & Godzilla attractions",
+          width: "400px",
+          height: "280px",
+        },
+        {
+          src: "https://media.tenor.com/sh_5zpuzWs4AAAAM/cat-pull-cat-snatch.gif",
+          alt: "catnapped",
+          link: "https://media.tenor.com/sh_5zpuzWs4AAAAM/cat-pull-cat-snatch.gif",
+          description: "Have a cat (TOP PRIORITY)",
+        },
+      ],
+    };
+  },
+  mounted() {
+    this.renderGallery("hobbies-gallery", this.hobbiesGallery); // Pass gallery data to renderGallery
+    this.renderGallery("art-gallery", this.artGallery);       // Pass gallery data to renderGallery
+    this.renderGallery("personal-goals-gallery", this.personalGoalsGallery); // Pass gallery data to renderGallery
+  },
+  methods: {
+    renderGallery(containerId, galleryItems) { // Modified to be a Vue method and accept galleryItems
+      const container = document.getElementById(containerId);
+
+      if (!container) return console.error(`Container with ID ${containerId} not found.`);
+
+      container.innerHTML = ""; // Clear existing content
+
+      const renderedItems = []; // Array to store rendered item data
+
+      galleryItems.forEach((item) => {
+        const galleryDiv = document.createElement("div");
+        galleryDiv.className = "gallery";
+
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.alt;
+        img.style.width = "320px";
+        img.style.height = "280px";
+        img.dataset.link = item.link;
+        img.dataset.description = item.description;
+        img.style.cursor = "pointer"; // Add CSS style for hover pointer
+
+        const desc = document.createElement("div");
+        desc.className = "desc";
+        desc.innerText = item.description;
+
+        galleryDiv.appendChild(img);
+        galleryDiv.appendChild(desc);
+        container.appendChild(galleryDiv);
+
+        renderedItems.push({  // Store image info and element
+          element: img,
+          info: { link: item.link, src: item.src, description: item.description }
+        });
+      });
+
+      renderedItems.forEach(item => { // Attach click listeners using Vue methods!
+        item.element.addEventListener('click', () => {
+          this.openModal(item.info); // Call the Vue component's openModal method!
+        });
+      });
+    },
+    openModal(imageInfo) {
+      this.isModalVisible = true;
+      this.modalImageSrc = imageInfo.link || imageInfo.src;
+      this.modalImageCaption = imageInfo.description || "";
+    },
+    closeTheModal() {
+      this.isModalVisible = false;
+    },
+    handleModalClickOutside(event) {
+      if (event.target.id === 'image-modal') {
+        this.closeTheModal();
+      }
+    },
+  },
+};
+</script>

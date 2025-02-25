@@ -6,6 +6,7 @@
   <about/>
   <it/>
   <goals/>
+  <gallery/>
   <comment-form/>
   <comment/>
 </template>

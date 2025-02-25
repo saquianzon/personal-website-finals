@@ -12,23 +12,9 @@
         <h3 class="w3-padding-16 w3-center w3-text-light-grey">Preaching and Creative Work</h3>
         <div id="preaching-gallery" class="gallery-container"></div>
       </section>
-      
-      <!-- Personal Goals Section -->
-      <section>
-        <h3 class="w3-padding-16 w3-center w3-text-light-grey">Personal Goals</h3>
-        <div id="personal-goals-gallery" class="gallery-container"></div>
-      </section>
     </div>
+        
   </div>
-
-    <div id="image-modal" class="modal" role="dialog" aria-labelledby="image-caption" aria-hidden="true" v-if="isModalVisible" @click="handleModalClickOutside">
-    <button id="close-modal" class="close" aria-label="Close" @click="closeTheModal">&times;</button>
-    <img class="modal-content" id="modal-image" :src="modalImageSrc" alt="Full-size view of selected image">
-    <div id="image-caption" role="note">{{ modalImageCaption }}</div>
-  </div>
-   <div v-else>  <removeline>  </removeline>  {/* Hidden when isModalVisible is false */}
-     {/* Modal is hidden */}
-   </div>
 
 </template>
 
