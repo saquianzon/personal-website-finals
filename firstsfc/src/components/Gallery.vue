@@ -39,51 +39,51 @@ export default {
       modalImageCaption: '',
       hobbiesGallery: [ // Moved hobbiesGallery data into component data
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/digital%20drawing.png?raw=true",
+          src: "/images/digital drawing.png",
           alt: "Digital Drawing",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/digital%20drawing.png?raw=true",
+          link: "/images/digital drawing.png",
           description: "Digital Drawing",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/gahoole.jpg?raw=true",
+          src: "/images/gahoole.jpg",
           alt: "Reading Novels",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/gahoole.jpg?raw=true",
+          link: "/images/gahoole.jpg",
           description: "Reading Novels",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/doors%20figure.png?raw=true",
+          src: "/images/doors figure.png",
           alt: "Video Games",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/doors%20figure.png?raw=true",
+          link: "/images/doors figure.png",
           description: "Video Games",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/cat.png?raw=true",
+          src: "/images/cat.png",
           alt: "Cats",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/cat.png?raw=true",
+          link: "/images/cat.png",
           description: "Cats",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/dinosaurs.png?raw=true",
+          src: "/images/dinosaurs.png",
           alt: "Dinosaurs",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/dinosaurs.png?raw=true",
+          link: "/images/dinosaurs.png",
           description: "Dinosaurs",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/nature.png?raw=true",
+          src: "/images/nature.png",
           alt: "Nature",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/nature.png?raw=true",
+          link: "/images/nature.png",
           description: "Nature",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/godzilla.jpg?raw=true",
+          src: "/images/godzilla.jpg",
           alt: "Watching Movies/Shows",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/godzilla.jpg?raw=true",
+          link: "/images/godzilla.jpg",
           description: "Watching Sci-Fi Movies/Shows",
         },
         {
-          src: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/ukulele.png?raw=true",
+          src: "/images/ukulele.png",
           alt: "Playing/Listening to Music",
-          link: "https://github.com/saquianzon/WEBPROG-SF231-Personal-Website/blob/feature/2_SLQ_customize_my_website/home/hobbies%20pics/ukulele.png?raw=true",
+          link: "/images/ukulele.png",
           description: "Playing/Listening to Music",
         },
         // Add your hobbies gallery items here
@@ -111,7 +111,7 @@ export default {
           src: "/images/The Eagle and the Turtle.png",
           alt: "The Eagle and Turtle",
           link: "/images/The Eagle and the Turtle.png",
-          description: "The Eagle and Turtle",
+          description: "The Eagle and the Turtle",
         },
         {
           src: "/images/JWD Blue & Beta.png",
@@ -189,7 +189,7 @@ export default {
   },
   mounted() {
     this.renderGallery("hobbies-gallery", this.hobbiesGallery); // Pass gallery data to renderGallery
-    this.renderGallery("art-gallery", this.artGallery);       // Pass gallery data to renderGallery
+    this.renderGallery("art-gallery", this.artGallery);     // Pass gallery data to renderGallery
     this.renderGallery("personal-goals-gallery", this.personalGoalsGallery); // Pass gallery data to renderGallery
   },
   methods: {
@@ -230,9 +230,9 @@ export default {
       });
 
       renderedItems.forEach(item => { // Attach click listeners using Vue methods!
-        item.element.addEventListener('click', () => {
+        item.element.addEventListener('click', function() { // Changed to standard function
           this.openModal(item.info); // Call the Vue component's openModal method!
-        });
+        }.bind(this)); // <--- .bind(this) is added here
       });
     },
     openModal(imageInfo) {
