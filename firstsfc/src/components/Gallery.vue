@@ -1,45 +1,30 @@
 <template>
-    <div class="w3-padding-large" id="main">
-        <div id="main-content">
-            <div class="w3-content w3-center w3-text-white" id="goals">
-            </div>
-            
-            <!-- Personal Goals Section -->
-            <section>
-                <h3 class="w3-padding-16 w3-center w3-text-light-grey">Personal Goals</h3>
-                <div id="personal-goals-gallery" class="gallery-container"></div>
-            </section>
-
-            <section>
-                <div class="w3-content w3-center w3-text-white" id="photos">
-                    <h2 class="w3-padding-16 w3-center w3-text-light-grey">Hobbies and Interests</h2>
-                </div>
-                <hr style="width:200px" class="center-line">
-                <p class="w3-center w3-large">Try clicking on the images!</p>
-                <br>
-                <div id="hobbies-gallery" class="gallery-container"></div>
-            </section>
-            
-            <!-- Gallery Vue (changed to pass HTML validator as vue is not recognized)-->
-            <!-- Art Gallery Section -->
-            <section>
-                <div class="w3-content w3-center w3-text-white" id="art">
-                    <h2 class="w3-padding-16 w3-center w3-text-light-grey">Art Gallery</h2>
-                </div>
-                <hr style="width:200px" class="center-line">
-                <p class="w3-center w3-large">Try clicking on the images!</p>
-                <p class="w3-center w3-medium">Please don't steal/repost my works .ᐟ(つ╥﹏╥)つ</p>
-                <div id="art-gallery" class="gallery-container"></div>
-            </section>
-        </div>
-        
-        <!-- Modal Vue for Full-Size Images (changed to pass HTML validator as vue is not recognized) -->
-        <div id="image-modal" class="modal" role="dialog" aria-labelledby="image-caption" aria-hidden="true">
-            <button id="close-modal" class="close" aria-label="Close">&times;</button>
-            <img class="modal-content" id="modal-image" src="https://via.placeholder.com/300" alt="Full-size view of selected image">
-            <div id="image-caption" role="note"></div>
-        </div>
+  <div class="w3-padding-large" id="main">
+    <div class="w3-content w3-center w3-text-white" id="goals">
     </div>
+    <section>
+      <h3 class="w3-padding-16 w3-center w3-text-light-grey">Personal Goals</h3>
+      <div id="personal-goals-gallery" class="gallery-container"></div>
+    </section>
+    <section>
+      <div class="w3-content w3-center w3-text-white" id="photos">
+        <h2 class="w3-padding-16 w3-center w3-text-light-grey">Hobbies and Interests</h2>
+      </div>
+      <hr style="width:200px" class="center-line">
+      <p class="w3-center w3-large">Try clicking on the images!</p>
+      <br>
+      <div id="hobbies-gallery" class="gallery-container"></div>
+    </section>
+    <section>
+      <div class="w3-content w3-center w3-text-white" id="art">
+        <h2 class="w3-padding-16 w3-center w3-text-light-grey">Art Gallery</h2>
+      </div>
+      <hr style="width:200px" class="center-line">
+      <p class="w3-center w3-large">Try clicking on the images!</p>
+      <p class="w3-center w3-medium">Please don't steal/repost my works .ᐟ(つ╥﹏╥)つ</p>
+      <div id="art-gallery" class="gallery-container"></div>
+    </section>
+    <Modal ref="imageModal" />  </div>
 </template>
 
 <script>
