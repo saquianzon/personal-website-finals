@@ -60,46 +60,23 @@ async function submitComment() {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 800px; /* Limit max width */
+  margin: 0 auto; /* Center it */
 }
 
-/* Ensure form stretches fully */
+/* Ensure form uses full width but within limits */
 .comment-form-container form {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px; /* Reduce width */
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
 }
 
-/* Adjust the form layout for large screens */
-@media (min-width: 769px) {
-  .comment-form-container {
-    margin-left: 230px;
-    max-width: none;
-    width: 100%;
-  }
-
-  .comment-form-container form {
-    max-width: 60%; /* Allow form to expand */
-  }
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-  .comment-form-container {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    max-width: 95%;
-  }
-}
-
-/* Make inputs stretch properly */
+/* Name input & textarea fields */
 .w3-input {
-  width: 100% !important;
+  width: 100%;
   max-width: 100%;
   border: 1px solid #ccc;
   padding: 10px;
@@ -113,16 +90,40 @@ async function submitComment() {
   resize: vertical;
 }
 
-/* Button styling */
+/* Submit button styling */
 .w3-button {
-  width: 100% !important;
+  width: auto; /* Remove full width */
+  min-width: 120px; /* Give it a fixed size */
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 16px;
   font-weight: bold;
+  text-align: center;
 }
 
-.w3-button:hover {
-  background-color: #ddd !important;
+/* Center button */
+.comment-form-container form p {
+  text-align: center;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .comment-form-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    max-width: 95%;
+    width: auto;
+    align-items: stretch;
+  }
+}
+
+/* Further refinement for very small screens */
+@media (max-width: 600px) {
+  .comment-form-container {
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 100%;
+  }
 }
 </style>
 
