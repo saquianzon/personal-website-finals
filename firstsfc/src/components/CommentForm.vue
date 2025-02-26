@@ -59,19 +59,31 @@ async function submitComment() {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Ensures form uses full width on larger screens */
+/* Ensure form stretches fully */
+.comment-form-container form {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Adjust the form layout for large screens */
 @media (min-width: 769px) {
   .comment-form-container {
     margin-left: 230px;
     max-width: none;
     width: 100%;
-    align-items: flex-start;
+  }
+
+  .comment-form-container form {
+    max-width: 60%; /* Allow form to expand */
   }
 }
 
@@ -82,82 +94,35 @@ async function submitComment() {
     margin-right: auto;
     padding: 10px;
     max-width: 95%;
-    width: auto;
-    align-items: stretch;
   }
 }
 
-/* Further refinement for very small screens */
-@media (max-width: 600px) {
-  .comment-form-container {
-    padding-left: 5px;
-    padding-right: 5px;
-    max-width: 100%;
-  }
-}
-
-/* Ensures the comment form fills available space */
-.comment-form {
-  padding: 20px;
-  width: 100%;
-  max-width: 700px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Name input & textarea fields */
-.comment-form input[type="text"],
-.comment-form textarea {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #ccc;
+/* Make inputs stretch properly */
+.w3-input {
+  width: 100% !important;
+  max-width: 100%;
+  border: 1px solid #ccc;
   padding: 10px;
-  background: #fff;
-  box-sizing: border-box;
   border-radius: 5px;
-  margin-bottom: 10px;
+  background: white;
 }
 
-.comment-form textarea {
+/* Textarea styling */
+.w3-input[style="resize:vertical"] {
   min-height: 100px;
+  resize: vertical;
 }
 
-/* Submit button */
-.comment-form button {
-  padding: 10px 16px;
-  width: 100%;
-  border: none;
-  background: #fff;
-  color: #000;
+/* Button styling */
+.w3-button {
+  width: 100% !important;
+  border-radius: 5px;
+  padding: 10px;
   font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
 }
 
-.comment-form button:hover {
-  background: #ddd;
+.w3-button:hover {
+  background-color: #ddd !important;
 }
-
-/* Adjust the positioning of the input fields */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Align everything properly */
-.comment-form-container {
-  display: flex;
-  justify-content: center;
-}
-
-.comment-form {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
 </style>
+
