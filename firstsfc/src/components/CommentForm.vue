@@ -63,10 +63,11 @@ async function submitComment() {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  left: 40px; /* Shift to the right */
+  left: 40px; /* Shift the whole container slightly right */
+  align-items: center; /* Ensures contents stay centered */
 }
 
-/* Ensure form uses full width but within limits */
+/* Ensure form stays centered */
 .comment-form-container form {
   width: 100%;
   max-width: 600px;
@@ -76,18 +77,17 @@ async function submitComment() {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center form content */
+  justify-content: center;
 }
 
 /* Name input & textarea fields */
 .w3-input {
   width: 100%;
-  max-width: 100%;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
   background: white;
-  text-align: left;
 }
 
 /* Textarea styling */
@@ -116,7 +116,7 @@ async function submitComment() {
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   .comment-form-container {
-    left: 0; /* Reset left shift for small screens */
+    left: 0; /* Reset shift for small screens */
     margin: 0 auto;
     padding: 10px;
     max-width: 95%;
