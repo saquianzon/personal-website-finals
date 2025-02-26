@@ -55,34 +55,47 @@ async function submitComment() {
 <style scoped>
 .comment-form-container {
   background-color: #241727; /* Match the comment section background */
-  padding-top: 20px; /* Keep this if you want top padding */
-  margin-left: 230px; /* Add margin-left here - adjust this value */
-  margin-right: 90px;/
+  padding-top: 20px;
+  margin-left: auto; /* **CHANGE: Set margin-left to auto for centering** */
+  margin-right: auto; /* **CHANGE: Set margin-right to auto for centering** */
+  max-width: 600px; /* **ADD: Set a max-width to limit stretching (adjust as needed)** */
+  width: 90%; /* **ADD: Default width to be 90% of parent for responsiveness** */
+  display: flex;        /* **ADD: Enable flexbox for centering and alignment** */
+  flex-direction: column; /* **ADD: Ensure flex direction is column** */
+  align-items: center;    /* **ADD: Center form horizontally inside container** */
 }
 
 /* Media query for screens smaller than 768px (typical tablet/mobile breakpoint) */
 @media (max-width: 768px) {
   .comment-form-container {
-    margin-left: 10px; /* Reduce margin-left on smaller screens */
-    margin-right: 10px; /* Reduce margin-right on smaller screens */
-    padding-left: 10px; /* Add some left padding for very small screens if needed */
-    padding-right: 10px; /* Add some right padding for very small screens if needed */
+    margin-left: auto;     /* **KEEP auto margins for smaller screens** */
+    margin-right: auto;    /* **KEEP auto margins for smaller screens** */
+    padding-left: 10px;    /* Keep padding adjustments for smaller screens */
+    padding-right: 10px;   /* Keep padding adjustments for smaller screens */
+    max-width: 95%;     /* **ADJUST max-width for smaller screens if needed (e.g., 95%)** */
+    width: auto;         /* **CHANGE width to auto to adapt to smaller screen width** */
+    align-items: stretch;  /* **CHANGE to stretch:  stretch form to full width on small screens** */
   }
 }
 
 /* Media query for even smaller screens (e.g., phones, less than 600px) - Optional extra adjustment if needed */
 @media (max-width: 600px) {
   .comment-form-container {
-    margin-left: 0; /* Remove left margin on very small screens if needed */
-    margin-right: 0; /* Remove right margin on very small screens if needed */
-    padding-left: 5px; /* Further reduce padding if needed */
-    padding-right: 5px; /* Further reduce padding if needed */
+    margin-left: auto;     /* **KEEP auto margins for very small screens** */
+    margin-right: auto;    /* **KEEP auto margins for very small screens** */
+    padding-left: 5px;     /* Keep padding adjustments for very small screens */
+    padding-right: 5px;    /* Keep padding adjustments for very small screens */
+    max-width: 100%;    /* **ADJUST max-width for very small screens if needed (e.g., 100%)** */
+    width: auto;         /* **KEEP width auto for very small screens** */
+    align-items: stretch;  /* **KEEP stretch for very small screens** */
   }
 }
 
 .comment-form {
   /* w3-card-4, w3-padding, w3-white classes are already in template */
   padding: 16px; /* Adjust padding as needed */
+  width: 100%;     /* **ADD: Ensure form takes full width of container** */
+  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
 }
 
 .form-header {
@@ -120,6 +133,8 @@ async function submitComment() {
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
+  width: 100%;     /* **ADD: Ensure textarea takes full width of form** */
+  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
 }
 
 .form-content textarea:focus {
@@ -133,17 +148,16 @@ async function submitComment() {
   align-items: center;
   gap: 10px;
   margin-top: 10px;
-  flex-direction: column; /* **ADD THIS: Stack buttons vertically on small screens** */
-  align-items: stretch; /* **ADD THIS: Stretch buttons to full width on small screens** */
+  flex-direction: column;
+  align-items: stretch;
 }
 
-@media (max-width: 600px) { /* Media query for smaller screens - matching the one for .comment-container margins */
+@media (max-width: 600px) {
   .form-actions {
-    flex-direction: column; /* Ensure vertical stacking on very small screens again (redundant but safe) */
-    align-items: stretch;  /* Ensure stretch on very small screens again (redundant but safe) */
+    flex-direction: column;
+    align-items: stretch;
   }
 }
-
 
 .form-actions input[type="text"] {
   flex-grow: 1;
@@ -151,21 +165,24 @@ async function submitComment() {
   border-radius: 4px;
   border: 1px solid #ccc;
   padding: 8px;
-  margin-bottom: 10px; /* **ADD THIS: Margin below input when stacked vertically** */
-  margin-right: 0; /* **ADD THIS: Remove right margin when stacked vertically** */
+  margin-bottom: 10px;
+  margin-right: 0;
+  width: 100%;     /* **ADD: Ensure input takes full width of actions** */
+  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
 }
 
-@media (max-width: 600px) { /* Media query for smaller screens - matching the one for .comment-container margins */
+
+@media (max-width: 600px) {
   .form-actions input[type="text"] {
-    margin-bottom: 10px; /* Ensure margin below input when stacked */
-    margin-right: 0; /* Ensure no right margin when stacked */
+    margin-bottom: 10px;
+    margin-right: 0;
   }
 }
 
 
 .form-actions button {
   padding: 8px 16px;
-  width: 100%; /* **ADD THIS: Make buttons full width on small screens** */
+  width: 100%;
 }
 
 .w3-text-green { /* Define green text class if W3.CSS doesn't have one you like */
