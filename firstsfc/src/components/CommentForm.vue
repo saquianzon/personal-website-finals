@@ -114,7 +114,7 @@ async function submitComment() {
   width: 100%;
   border: none;
   border-bottom: 2px solid #ccc;
-  padding: 20px;
+  padding: 80px;
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
