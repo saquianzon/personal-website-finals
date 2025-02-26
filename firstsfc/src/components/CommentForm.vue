@@ -55,9 +55,9 @@ async function submitComment() {
 <style scoped>
 .comment-form-container {
   background-color: #241727; /* Match the comment section background */
-  padding-top: 20px;
-  margin-left: 90px; /* Reduced default margin-left for wider screens */
-  margin-right: 30px; /* Keep default margin-right */
+  padding-top: 20px; /* Keep this if you want top padding */
+  margin-left: 230px; /* Add margin-left here - adjust this value */
+  margin-right: 90px;/
 }
 
 /* Media query for screens smaller than 768px (typical tablet/mobile breakpoint) */
