@@ -53,59 +53,61 @@ async function submitComment() {
 </script>
 
 <style scoped>
+/* Main comment form container */
 .comment-form-container {
-  background-color: #241727; /* Match the comment section background */
-  padding-top: 20px;
-  margin-right: 30px; /* Keep default margin-right */
-  display: flex;         /* Keep flexbox for container */
-  flex-direction: column; /* Keep flex direction column */
-  align-items: stretch;     /* **CHANGE: align-items to stretch to fill width** */
+  background-color: #241727;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px; /* Keep max width for control */
+  margin: 0 auto;
 }
 
-/* Media query for screens larger than 769px (PC screens and larger) */
+/* Allow full width for larger screens */
 @media (min-width: 769px) {
   .comment-form-container {
-    margin-left: 230px; /* **RE-INTRODUCE: margin-left for PC screens (adjust as needed)** */
-    max-width: none;     /* **REMOVE: max-width for PC screens - allow stretching** */
-    width: auto;         /* **REMOVE: width: auto for PC screens - allow stretching** */
-    align-items: flex-start; /* **CHANGE: align-items back to flex-start for left alignment on PC** */
+    margin-left: 230px; /* Shift to the right */
+    max-width: none;
+    width: auto;
+    align-items: flex-start; /* Align to the left */
   }
 }
 
-
-/* Media query for screens smaller than 768px (typical tablet/mobile breakpoint) - Keep mobile styles */
+/* Responsive settings for tablets & smaller devices */
 @media (max-width: 768px) {
   .comment-form-container {
-    margin-left: auto;     /* Keep auto margins for smaller screens */
-    margin-right: auto;    /* Keep auto margins for smaller screens */
-    padding-left: 10px;    /* Keep padding adjustments for smaller screens */
-    padding-right: 10px;   /* Keep padding adjustments for smaller screens */
-    max-width: 95%;      /* Keep max-width for smaller screens */
-    width: auto;          /* Keep width auto for smaller screens */
-    align-items: stretch;   /* Keep stretch for smaller screens */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 95%;
+    width: auto;
+    align-items: stretch;
   }
 }
 
-/* Media query for even smaller screens (e.g., phones, less than 600px) - Optional extra adjustment if needed - Keep mobile styles */
+/* Further adjustments for very small screens */
 @media (max-width: 600px) {
   .comment-form-container {
-    margin-left: auto;     /* Keep auto margins for very small screens */
-    margin-right: auto;    /* Keep auto margins for very small screens */
-    padding-left: 5px;     /* Keep padding adjustments for very small screens */
-    padding-right: 5px;    /* Keep padding adjustments for very small screens */
-    max-width: 100%;     /* Keep max-width for very small screens */
-    width: auto;          /* Keep width auto for very small screens */
-    align-items: stretch;   /* Keep stretch for very small screens */
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 100%;
   }
 }
 
+/* Comment form */
 .comment-form {
-  /* w3-card-4, w3-padding, w3-white classes are already in template */
   padding: 16px;
   width: 100%;
+  max-width: 700px; /* Ensure reasonable width */
+  background: rgba(255, 255, 255, 0.1); /* Light contrast */
+  border-radius: 8px;
   box-sizing: border-box;
 }
 
+/* Header section */
 .form-header {
   display: flex;
   align-items: flex-start;
@@ -131,18 +133,19 @@ async function submitComment() {
 
 .form-title label {
   font-weight: bold;
-  color: #333;
+  color: #fff; /* Ensure readability */
 }
 
+/* Textarea styling */
 .form-content textarea {
-  margin-bottom: 10px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
   width: 100%;
+  min-height: 120px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  background: #fff;
   box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .form-content textarea:focus {
@@ -150,16 +153,15 @@ async function submitComment() {
   border-bottom-color: #aaa;
 }
 
+/* Form action buttons */
 .form-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
   margin-top: 10px;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
 }
-
 
 @media (max-width: 600px) {
   .form-actions {
@@ -168,34 +170,34 @@ async function submitComment() {
   }
 }
 
-
+/* Name input field */
 .form-actions input[type="text"] {
   flex-grow: 1;
-  margin-right: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
   padding: 8px;
-  margin-bottom: 10px;
-  margin-right: 0;
   width: 100%;
   box-sizing: border-box;
 }
 
-
-@media (max-width: 600px) {
-  .form-actions input[type="text"] {
-    margin-bottom: 10px;
-    margin-right: 0;
-  }
-}
-
-
+/* Submit button */
 .form-actions button {
-  padding: 8px 16px;
+  padding: 10px 16px;
   width: 100%;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.w3-text-green { /* Define green text class if W3.CSS doesn't have one you like */
+.form-actions button:hover {
+  background: #ddd;
+}
+
+/* Submission status message */
+.w3-text-green {
   color: green !important;
 }
 </style>
