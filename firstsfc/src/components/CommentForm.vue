@@ -61,34 +61,33 @@ async function submitComment() {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 900px; /* Keep max width for control */
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* Allow full width for larger screens */
+/* Ensures form uses full width on larger screens */
 @media (min-width: 769px) {
   .comment-form-container {
-    margin-left: 230px; /* Shift to the right */
+    margin-left: 230px;
     max-width: none;
-    width: auto;
-    align-items: flex-start; /* Align to the left */
+    width: 100%;
+    align-items: flex-start;
   }
 }
 
-/* Responsive settings for tablets & smaller devices */
+/* Adjust for smaller screens */
 @media (max-width: 768px) {
   .comment-form-container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     max-width: 95%;
     width: auto;
     align-items: stretch;
   }
 }
 
-/* Further adjustments for very small screens */
+/* Further refinement for very small screens */
 @media (max-width: 600px) {
   .comment-form-container {
     padding-left: 5px;
@@ -97,91 +96,37 @@ async function submitComment() {
   }
 }
 
-/* Comment form */
+/* Ensures the comment form fills available space */
 .comment-form {
-  padding: 16px;
+  padding: 20px;
   width: 100%;
-  max-width: 700px; /* Ensure reasonable width */
-  background: rgba(255, 255, 255, 0.1); /* Light contrast */
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   box-sizing: border-box;
-}
-
-/* Header section */
-.form-header {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  flex-direction: column;
 }
 
-.avatar-placeholder {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin-right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  color: #aaa;
-}
-
-.form-title {
-  flex-grow: 1;
-}
-
-.form-title label {
-  font-weight: bold;
-  color: #fff; /* Ensure readability */
-}
-
-/* Textarea styling */
-.form-content textarea {
+/* Name input & textarea fields */
+.comment-form input[type="text"],
+.comment-form textarea {
   width: 100%;
-  min-height: 120px;
   border: none;
   border-bottom: 2px solid #ccc;
   padding: 10px;
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.form-content textarea:focus {
-  outline: none;
-  border-bottom-color: #aaa;
-}
-
-/* Form action buttons */
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  flex-direction: row;
-}
-
-@media (max-width: 600px) {
-  .form-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-/* Name input field */
-.form-actions input[type="text"] {
-  flex-grow: 1;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
+.comment-form textarea {
+  min-height: 100px;
 }
 
 /* Submit button */
-.form-actions button {
+.comment-form button {
   padding: 10px 16px;
   width: 100%;
   border: none;
@@ -192,12 +137,27 @@ async function submitComment() {
   transition: background 0.3s ease-in-out;
 }
 
-.form-actions button:hover {
+.comment-form button:hover {
   background: #ddd;
 }
 
-/* Submission status message */
-.w3-text-green {
-  color: green !important;
+/* Adjust the positioning of the input fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
+
+/* Align everything properly */
+.comment-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 </style>
