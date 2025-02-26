@@ -60,22 +60,22 @@ async function submitComment() {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 800px; /* Limit max width */
-  margin: 0 auto; /* Center it */
-  align-items: center; /* Center content */
+  max-width: 800px;
+  margin: 0 auto 0 5%; /* Shift slightly to the right */
+  align-items: center;
 }
 
 /* Ensure form uses full width but within limits */
 .comment-form-container form {
   width: 100%;
-  max-width: 600px; /* Reduce width */
+  max-width: 600px;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center form elements */
+  align-items: center;
 }
 
 /* Name input & textarea fields */
@@ -86,7 +86,7 @@ async function submitComment() {
   padding: 10px;
   border-radius: 5px;
   background: white;
-  text-align: left; /* Ensure text starts from the left */
+  text-align: left;
 }
 
 /* Textarea styling */
@@ -97,13 +97,13 @@ async function submitComment() {
 
 /* Submit button styling */
 .w3-button {
-  width: auto; /* Remove full width */
-  min-width: 120px; /* Give it a fixed size */
+  width: auto;
+  min-width: 120px;
   border-radius: 5px;
   padding: 10px 16px;
   font-weight: bold;
   text-align: center;
-  margin-top: 10px; /* Add space between textarea and button */
+  margin-top: 10px;
 }
 
 /* Center button */
@@ -115,12 +115,11 @@ async function submitComment() {
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   .comment-form-container {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto; /* Reset margin for small screens */
     padding: 10px;
     max-width: 95%;
     width: auto;
-    align-items: center; /* Keep content centered */
+    align-items: center;
   }
 }
 
@@ -130,6 +129,7 @@ async function submitComment() {
     padding-left: 5px;
     padding-right: 5px;
     max-width: 100%;
+    margin: 0 auto; /* Ensure centering */
   }
 }
 </style>
