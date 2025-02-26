@@ -56,46 +56,54 @@ async function submitComment() {
 .comment-form-container {
   background-color: #241727; /* Match the comment section background */
   padding-top: 20px;
-  margin-left: auto; /* **CHANGE: Set margin-left to auto for centering** */
-  margin-right: auto; /* **CHANGE: Set margin-right to auto for centering** */
-  max-width: 600px; /* **ADD: Set a max-width to limit stretching (adjust as needed)** */
-  width: 90%; /* **ADD: Default width to be 90% of parent for responsiveness** */
-  display: flex;        /* **ADD: Enable flexbox for centering and alignment** */
-  flex-direction: column; /* **ADD: Ensure flex direction is column** */
-  align-items: center;    /* **ADD: Center form horizontally inside container** */
+  margin-right: 30px; /* Keep default margin-right */
+  display: flex;         /* Keep flexbox for container */
+  flex-direction: column; /* Keep flex direction column */
+  align-items: stretch;     /* **CHANGE: align-items to stretch to fill width** */
 }
 
-/* Media query for screens smaller than 768px (typical tablet/mobile breakpoint) */
-@media (max-width: 768px) {
+/* Media query for screens larger than 769px (PC screens and larger) */
+@media (min-width: 769px) {
   .comment-form-container {
-    margin-left: auto;     /* **KEEP auto margins for smaller screens** */
-    margin-right: auto;    /* **KEEP auto margins for smaller screens** */
-    padding-left: 10px;    /* Keep padding adjustments for smaller screens */
-    padding-right: 10px;   /* Keep padding adjustments for smaller screens */
-    max-width: 95%;     /* **ADJUST max-width for smaller screens if needed (e.g., 95%)** */
-    width: auto;         /* **CHANGE width to auto to adapt to smaller screen width** */
-    align-items: stretch;  /* **CHANGE to stretch:  stretch form to full width on small screens** */
+    margin-left: 230px; /* **RE-INTRODUCE: margin-left for PC screens (adjust as needed)** */
+    max-width: none;     /* **REMOVE: max-width for PC screens - allow stretching** */
+    width: auto;         /* **REMOVE: width: auto for PC screens - allow stretching** */
+    align-items: flex-start; /* **CHANGE: align-items back to flex-start for left alignment on PC** */
   }
 }
 
-/* Media query for even smaller screens (e.g., phones, less than 600px) - Optional extra adjustment if needed */
+
+/* Media query for screens smaller than 768px (typical tablet/mobile breakpoint) - Keep mobile styles */
+@media (max-width: 768px) {
+  .comment-form-container {
+    margin-left: auto;     /* Keep auto margins for smaller screens */
+    margin-right: auto;    /* Keep auto margins for smaller screens */
+    padding-left: 10px;    /* Keep padding adjustments for smaller screens */
+    padding-right: 10px;   /* Keep padding adjustments for smaller screens */
+    max-width: 95%;      /* Keep max-width for smaller screens */
+    width: auto;          /* Keep width auto for smaller screens */
+    align-items: stretch;   /* Keep stretch for smaller screens */
+  }
+}
+
+/* Media query for even smaller screens (e.g., phones, less than 600px) - Optional extra adjustment if needed - Keep mobile styles */
 @media (max-width: 600px) {
   .comment-form-container {
-    margin-left: auto;     /* **KEEP auto margins for very small screens** */
-    margin-right: auto;    /* **KEEP auto margins for very small screens** */
+    margin-left: auto;     /* Keep auto margins for very small screens */
+    margin-right: auto;    /* Keep auto margins for very small screens */
     padding-left: 5px;     /* Keep padding adjustments for very small screens */
     padding-right: 5px;    /* Keep padding adjustments for very small screens */
-    max-width: 100%;    /* **ADJUST max-width for very small screens if needed (e.g., 100%)** */
-    width: auto;         /* **KEEP width auto for very small screens** */
-    align-items: stretch;  /* **KEEP stretch for very small screens** */
+    max-width: 100%;     /* Keep max-width for very small screens */
+    width: auto;          /* Keep width auto for very small screens */
+    align-items: stretch;   /* Keep stretch for very small screens */
   }
 }
 
 .comment-form {
   /* w3-card-4, w3-padding, w3-white classes are already in template */
-  padding: 16px; /* Adjust padding as needed */
-  width: 100%;     /* **ADD: Ensure form takes full width of container** */
-  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-header {
@@ -133,8 +141,8 @@ async function submitComment() {
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;     /* **ADD: Ensure textarea takes full width of form** */
-  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-content textarea:focus {
@@ -152,12 +160,14 @@ async function submitComment() {
   align-items: stretch;
 }
 
+
 @media (max-width: 600px) {
   .form-actions {
     flex-direction: column;
     align-items: stretch;
   }
 }
+
 
 .form-actions input[type="text"] {
   flex-grow: 1;
@@ -167,8 +177,8 @@ async function submitComment() {
   padding: 8px;
   margin-bottom: 10px;
   margin-right: 0;
-  width: 100%;     /* **ADD: Ensure input takes full width of actions** */
-  box-sizing: border-box; /* **ADD: Include padding/border in width calculation** */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
