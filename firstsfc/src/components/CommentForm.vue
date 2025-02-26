@@ -61,8 +61,9 @@ async function submitComment() {
   flex-direction: column;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto 0 5%; /* Shift slightly to the right */
-  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  left: 40px; /* Shift to the right */
 }
 
 /* Ensure form uses full width but within limits */
@@ -115,7 +116,8 @@ async function submitComment() {
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   .comment-form-container {
-    margin: 0 auto; /* Reset margin for small screens */
+    left: 0; /* Reset left shift for small screens */
+    margin: 0 auto;
     padding: 10px;
     max-width: 95%;
     width: auto;
@@ -129,9 +131,10 @@ async function submitComment() {
     padding-left: 5px;
     padding-right: 5px;
     max-width: 100%;
-    margin: 0 auto; /* Ensure centering */
+    margin: 0 auto;
   }
 }
 </style>
+
 
 
