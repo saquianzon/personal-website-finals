@@ -41,7 +41,7 @@ const getAvatar = (name) => {
 /* Comment Box Styling */
 .comment-container {
   width: 100%;
-  max-width: 900px; /* Matches comment form */
+  max-width: 1000px; /* Matches comment form */
   margin: 50px auto; /* Centers it properly */
   padding: 20px;
   background: rgb(30, 31, 41);
