@@ -41,15 +41,17 @@ const getAvatar = (name) => {
 /* Comment Box Styling */
 .comment-container {
   width: 100%;
-  max-width: 900px; /* Adjust width for better centering */
-  margin: 30px auto; /* Centers it properly */
+  max-width: 1100px;
+  margin: 30px auto;
+  margin-left: auto; /* Push it to the right */
+  margin-right: 180px; /* Adjust to control how far right it moves */
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 /* Title */
@@ -102,22 +104,26 @@ const getAvatar = (name) => {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .comment-container {
-    max-width: 85%;
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
     padding: 18px;
   }
 }
 
 @media (max-width: 768px) {
   .comment-container {
-    max-width: 90%;
+    max-width: 85%;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (max-width: 480px) {
   .comment-container {
-    width: 95%;
-    padding: 12px;
+    width: 90%;
+    padding: 10px;
   }
 
   .comment-title {
