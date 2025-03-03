@@ -111,6 +111,14 @@ const getAvatar = (name) => {
   }
 }
 
+@media (max-width: 900px) {
+  .comment-container {
+    max-width: 85%;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 @media (max-width: 768px) {
   .comment-container {
     max-width: 85%;
@@ -145,5 +153,6 @@ const getAvatar = (name) => {
   .comment-text {
     font-size: 0.85em;
   }
+}
 }
 </style>
