@@ -30,6 +30,7 @@ onMounted(() => {
   getComments();
 });
 
+// Placeholder avatar generator
 const getAvatar = (name) => {
   return `https://api.dicebear.com/7.x/identicon/svg?seed=${encodeURIComponent(
     name
@@ -38,19 +39,20 @@ const getAvatar = (name) => {
 </script>
 
 <style scoped>
-/* Comment Box Styling */
+/* Container Styling */
 .comment-container {
   width: 100%;
-  max-width: 1000px;
-  margin: 30px auto;
+  max-width: 1100px; /* Adjust to your preference */
+  margin: 30px;
+  margin-left: auto; /* Push it to the right */
+  margin-right: 180px; /* Adjust to control how far right it moves */
   padding: 20px;
-  background: rgb(30, 31, 41);
+  background: rgb(30, 31, 41); /* Discord-like dark theme */
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
-/* Title */
+/* Title Styling */
 .comment-title {
   font-size: 1.5em;
   font-weight: bold;
@@ -59,83 +61,37 @@ const getAvatar = (name) => {
   text-align: left;
 }
 
-/* Comment List */
+/* Comment List Styling */
 .comment-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Individual Comment */
+/* Comment Item */
 .comment-item {
-  padding: 13px 10px;
-  border-bottom: 1px solid #40444b;
+  padding: 13px 10px; /* Reduce padding inside each comment */
+  border-bottom: 1px solid #40444b; /* Keep separator */
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px; /* Reduce space between avatar & text */
 }
 
-/* Avatar */
 .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 32px; /* Slightly smaller avatar */
+  height: 32px;
+  margin-right: 8px; /* Reduce space between avatar and text */
 }
 
-/* Author Name */
 .comment-author-name {
-  font-size: 1em;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 3px;
+  font-size: 0.9em; /* Make name slightly smaller */
+  margin-bottom: 1px; /* Less space under name */
 }
 
-/* Comment Text */
 .comment-text {
-  font-size: 0.95em;
+  font-size: 0.85em; /* Slightly smaller text */
+  line-height: 1.2; /* Reduce line height for compactness */
   color: #dcddde;
-  line-height: 1.4;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .comment-container {
-    max-width: 85%;
-
-  }
-}
-
-@media (max-width: 768px) {
-  .comment-container {
-    max-width: 90%;
-
-  }
-}
-
-@media (max-width: 480px) {
-  .comment-container {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .comment-title {
-    font-size: 1.2em;
-    text-align: center;
-  }
-
-  .comment-item {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .avatar {
-    width: 35px;
-    height: 35px;
-  }
-
-  .comment-author-name,
-  .comment-text {
-    font-size: 0.85em;
-  }
-}
 </style>
