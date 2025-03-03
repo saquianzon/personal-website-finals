@@ -60,17 +60,17 @@ async function submitComment() {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
-  left: 60px; /* Shift the whole container slightly right */
+  left: 40px; /* Shift the whole container slightly right */
   align-items: center; /* Ensures contents stay centered */
 }
 
 /* Ensure form stays centered */
 .comment-form-container form {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 8px;
