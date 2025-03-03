@@ -113,7 +113,7 @@ const getAvatar = (name) => {
 
 @media (max-width: 768px) {
   .comment-container {
-    max-width: 85%;
+    max-width: 95%;
     padding: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -122,7 +122,7 @@ const getAvatar = (name) => {
 
 @media (max-width: 480px) {
   .comment-container {
-    width: 70%;
+    width: 90%;
     padding: 10px;
   }
 
