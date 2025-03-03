@@ -42,7 +42,7 @@ const getAvatar = (name) => {
 .comment-container {
   width: 100%;
   max-width: 1000px; /* Matches comment form */
-  margin: 50px auto; /* Centers it properly */
+  margin: 30px auto; /* Centers it properly */
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
