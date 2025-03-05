@@ -40,16 +40,16 @@ const getAvatar = (name) => {
 <style scoped>
 /* Comment Box Styling */
 .comment-container {
-  width: 100%; 
-  max-width: 1000px; 
-  margin: 30px auto; /* Ensures it's centered */
+  width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* Prevents width issues */
+  transition: all 0.3s ease-in-out;
 }
 
 /* Ensure No Overlap with Navbar */
@@ -116,8 +116,8 @@ main {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .comment-container {
-    width: 85%; /* Previously 80%, now better centered */
-    max-width: 85%;
+    width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -127,8 +127,6 @@ main {
   .comment-container {
     width: 90%;
     max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -136,10 +134,7 @@ main {
   .comment-container {
     width: 95%;
     max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
   }
-}
 
   .comment-title {
     font-size: 1.2em;
@@ -160,5 +155,5 @@ main {
   .comment-text {
     font-size: 0.85em;
   }
-
+}
 </style>
