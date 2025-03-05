@@ -119,7 +119,7 @@ main {
   .comment-container {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
-    margin-left: auto;
+    margin-left: 200px;
     margin-right: auto;
   }
 }
@@ -128,7 +128,7 @@ main {
   .comment-container {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
-    margin-left: auto;
+    margin-left: 150px;
     margin-right: auto;
   }
 }
@@ -140,6 +140,12 @@ main {
     margin-left: 100px
   }
 }
+
+@media (max-width: 640px) {
+  .comment-container {
+    width: 95%;
+    max-width: 95%;
+  }
 
 @media (max-width: 480px) {
   .comment-container {
@@ -166,5 +172,6 @@ main {
   .comment-text {
     font-size: 0.85em;
   }
+}
 }
 </style>
