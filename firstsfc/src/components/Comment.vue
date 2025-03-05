@@ -117,19 +117,19 @@ main {
 
 @media (min-width: 1024px) {
   .comment-container {
-    margin-left: 250px
+    margin-left: 300px
   }
 }
 
 @media (min-width: 1280px) {
   .comment-container {
-    margin-left: 300px
+    margin-left: 350px
   }
 }
 
 @media (min-width: 768px) {
   .comment-container {
-    margin-left: 200px
+    margin-left: 290px
   }
 }
 
