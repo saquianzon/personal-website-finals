@@ -135,7 +135,7 @@ main {
 
 @media (max-width: 1024px) {
   .comment-container {
-    width: 90%;
+    width: 85%;
     margin: 20px auto; /* Centering */
   }
 }
@@ -150,7 +150,7 @@ main {
 
 @media (max-width: 768px) {
   .comment-container {
-    width: 95%;
+    width: 90%;
   }
 }
 
