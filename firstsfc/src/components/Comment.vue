@@ -150,7 +150,11 @@ main {
 
 @media (max-width: 768px) {
   .comment-container {
-    width: 90%;
+    left: 0; /* Reset shift for small screens */
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 95%;
+    width: auto;
   }
 }
 
