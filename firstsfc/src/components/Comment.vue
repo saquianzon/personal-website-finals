@@ -117,7 +117,7 @@ main {
 
 @media (min-width: 1024px) {
   .comment-container {
-    margin-left: 250px
+    margin-left: 200px
   }
 }
 
@@ -129,7 +129,7 @@ main {
 
 @media (min-width: 768px) {
   .comment-container {
-    margin-left: 250px
+    margin-left: 200px
   }
 }
 
