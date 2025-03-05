@@ -130,13 +130,13 @@ main {
 @media (min-width: 768px) {
   .comment-container {
     position: relative;
+    right: 30px;
   }
 }
 
 @media (max-width: 1024px) {
   .comment-container {
     width: 85%;
-
   }
 }
 
