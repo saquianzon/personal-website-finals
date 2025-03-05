@@ -114,13 +114,6 @@ main {
 }
 
 /* Responsive Adjustments */
-
-@media (min-width: 1600px) {
-  .comment-container {
-    margin-left: 350px
-  }
-}
-
 @media (min-width: 1024px) {
   .comment-container {
     margin-left: 240px
@@ -133,9 +126,10 @@ main {
   }
 }
 
+
 @media (min-width: 768px) {
   .comment-container {
-    margin-left: 150px
+    margin-left: 320px
   }
 }
 
