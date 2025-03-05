@@ -40,10 +40,9 @@ const getAvatar = (name) => {
 <style scoped>
 /* Comment Box Styling */
 .comment-container {
-  width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
-  max-width: 1000px;
+  width: calc(90% - 250px); /* Adjust width dynamically based on the sidebar */
+  max-width: 1050px;
   margin: 30px auto;
-  margin-left: 320px; /* Ensure no overlap with sidebar */
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
@@ -117,10 +116,8 @@ main {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .comment-container {
-    width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
-    max-width: 80%;
-    margin-left: 200px;
-    margin-right: auto;
+    width: 90%;
+    margin: 20px auto; /* Centering */
   }
 }
 
@@ -128,16 +125,13 @@ main {
   .comment-container {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin: 20px auto; /* Centering */
   }
 }
 
 @media (max-width: 768px) {
   .comment-container {
-    width: 90%;
-    max-width: 90%;
-    margin-left: 100px
+    width: 95%;
   }
 }
 
@@ -145,14 +139,13 @@ main {
   .comment-container {
     width: 95%;
     max-width: 95%;
-    margin-right: 300px
   }
 
 @media (max-width: 480px) {
   .comment-container {
-    width: 95%;
-    max-width: 95%;
+    width: 98%;
   }
+}
 
   .comment-title {
     font-size: 1.2em;
@@ -174,5 +167,5 @@ main {
     font-size: 0.85em;
   }
 }
-}
+
 </style>
