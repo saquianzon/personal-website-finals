@@ -40,7 +40,7 @@ const getAvatar = (name) => {
 <style scoped>
 /* Comment Box Styling */
 .comment-container {
-  width: calc(90% - 250px); /* Adjust width dynamically based on the sidebar */
+  width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
   max-width: 1050px;
   margin: 30px auto;
   padding: 20px;
@@ -117,7 +117,7 @@ main {
 
 @media (min-width: 1024px) {
   .comment-container {
-    margin-left: 370px
+    margin-left: 300px
   }
 }
 
@@ -129,7 +129,7 @@ main {
 
 @media (min-width: 768px) {
   .comment-container {
-    margin-left: 350px
+    margin-left: 290px
   }
 }
 
