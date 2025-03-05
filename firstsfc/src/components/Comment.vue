@@ -129,7 +129,7 @@ main {
 
 @media (min-width: 768px) {
   .comment-container {
-    margin-left: 320px
+    position: relative;
   }
 }
 
