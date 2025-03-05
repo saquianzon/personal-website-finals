@@ -118,6 +118,7 @@ main {
   .comment-container {
     width: 90%;
     margin: 20px auto; /* Centering */
+    margin-left: 100px
   }
 }
 
@@ -126,12 +127,14 @@ main {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
     margin: 20px auto; /* Centering */
+    margin-left: 100px
   }
 }
 
 @media (max-width: 768px) {
   .comment-container {
     width: 95%;
+    margin-left: 100px
   }
 }
 
