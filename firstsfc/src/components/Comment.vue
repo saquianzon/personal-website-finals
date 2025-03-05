@@ -136,6 +136,8 @@ main {
 
 @media (max-width: 1024px) {
   .comment-container {
+    right: 0; /* Reset shift for small screens */
+    left: 0; /* Reset shift for small screens */
     width: 85%;
   }
 }
@@ -144,15 +146,14 @@ main {
   .comment-container {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
-
   }
 }
 
 @media (max-width: 768px) {
   .comment-container {
     left: 0; /* Reset shift for small screens */
-    margin: 0 auto;
-    padding: 10px;
+    margin: 10 auto;
+    padding: 20px;
     max-width: 95%;
     width: auto;
   }
