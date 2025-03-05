@@ -41,7 +41,7 @@ const getAvatar = (name) => {
 /* Comment Box Styling */
 .comment-container {
   width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
-  max-width: 1050px;
+  max-width: 1020px;
   margin: 30px auto;
   padding: 20px;
   background: rgb(30, 31, 41);
@@ -136,7 +136,7 @@ main {
 @media (max-width: 1024px) {
   .comment-container {
     width: 85%;
-    margin: 20px auto; /* Centering */
+
   }
 }
 
@@ -144,7 +144,7 @@ main {
   .comment-container {
     width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
     max-width: 80%;
-    margin: 20px auto; /* Centering */
+
   }
 }
 
