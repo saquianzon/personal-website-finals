@@ -115,6 +115,12 @@ main {
 
 /* Responsive Adjustments */
 
+@media (min-width: 1600px) {
+  .comment-container {
+    margin-left: 350px
+  }
+}
+
 @media (min-width: 1024px) {
   .comment-container {
     margin-left: 240px
