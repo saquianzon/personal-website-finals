@@ -42,7 +42,8 @@ const getAvatar = (name) => {
 .comment-container {
   width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
   max-width: 1000px;
-  margin: 30px auto 40px 265px; /* Moves it slightly to the right */
+  margin: 30px auto;
+  margin-left: 320px; /* Ensure no overlap with sidebar */
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
