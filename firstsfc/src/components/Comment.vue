@@ -40,17 +40,16 @@ const getAvatar = (name) => {
 <style scoped>
 /* Comment Box Styling */
 .comment-container {
-  width: 100%;
-  max-width: 1000px; /* Matches comment form */
-  margin: 30px auto; /* Centers it properly */
+  width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar */
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 20px;
   background: rgb(30, 31, 41);
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  position: relative;
-  left: 40px; /* Slight shift to match form alignment */
+  transition: all 0.3s ease-in-out;
 }
 
 /* Ensure No Overlap with Navbar */
@@ -117,23 +116,24 @@ main {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .comment-container {
-    max-width: 85%;
-    left: 0; /* Reset left positioning */
-    margin-top: 150px; /* Ensures spacing */
+    width: calc(100% - 180px); /* Shrinks the width slightly to avoid navbar overlap */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (max-width: 768px) {
   .comment-container {
+    width: 90%;
     max-width: 90%;
-    margin-top: 180px; /* More spacing */
   }
 }
 
 @media (max-width: 480px) {
   .comment-container {
     width: 95%;
-    margin-top: 200px;
+    max-width: 95%;
   }
 
   .comment-title {
