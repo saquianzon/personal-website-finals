@@ -1,6 +1,6 @@
 # 📌 Personal Website Resources Documentation  
 
-This document provides categorized resources for managing and developing a personal website.  
+This document provides the resources used for managing and developing this personal website.  
 
 ## 🔹 Repository & Development Environment  
 - **[GitHub](https://github.com/)** – Code storage, version control, and collaboration  
